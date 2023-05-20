@@ -32,5 +32,3 @@ const setActiveElement = (button) => {
   };
   
   addEventListeners();
-  
-
