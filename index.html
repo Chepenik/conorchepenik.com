@@ -5,6 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conor Chepenik</title>
+  <script>
+    window.MashSettings = {
+      id: "bbf1ab5e-250f-4619-a6f9-7f8e163565c6"
+    };
+    var loader = function () {
+      window.Mash.init();
+    };
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.defer = true;
+    script.onload = loader;
+    script.src = "https://app.mash.com/sdk/sdk.js";
+    var head = document.getElementsByTagName("head")[0];
+    head.appendChild(script);
+  </script>
+  
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="styles/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
