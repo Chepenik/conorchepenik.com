@@ -5,286 +5,311 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cities</title>
-</head>
-<body>
     <style>
-        body {
-  overflow: hidden;
-  font-family: "Roboto", serif;
-  background: linear-gradient(135deg, black, #220033);
+      body {
+overflow: hidden;
+font-family: "Roboto", serif;
+background: linear-gradient(135deg, black, #220033);
 }
 
 .carousel {
-  position: relative;
-  z-index: 1;
-  height: 100vh;
-  overflow: hidden;
-  pointer-events: none;
+position: relative;
+z-index: 1;
+height: 100vh;
+overflow: hidden;
+pointer-events: none;
 }
 
 .carousel-item {
-  --items: 10;
-  --width: clamp(150px, 30vw, 300px);
-  --height: clamp(200px, 40vw, 400px);
-  --x: calc(var(--active) * 800%);
-  --y: calc(var(--active) * 200%);
-  --rot: calc(var(--active) * 120deg);
-  --opacity: calc(var(--zIndex) / var(--items) * 3 - 2);
-  overflow: hidden;
-  position: absolute;
-  z-index: var(--zIndex);
-  width: var(--width);
-  height: var(--height);
-  margin: calc(var(--height) * -0.5) 0 0 calc(var(--width) * -0.5);
-  border-radius: 10px;
-  top: 50%;
-  left: 50%;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  transform-origin: 0% 100%;
-  box-shadow: 0 10px 50px 10px rgba(0, 0, 0, 0.5);
-  background: black;
-  pointer-events: all;
-  transform: translate(var(--x), var(--y)) rotate(var(--rot));
-  transition: transform 0.8s cubic-bezier(0, 0.02, 0, 1);
+--items: 10;
+--width: clamp(150px, 30vw, 300px);
+--height: clamp(200px, 40vw, 400px);
+--x: calc(var(--active) * 800%);
+--y: calc(var(--active) * 200%);
+--rot: calc(var(--active) * 120deg);
+--opacity: calc(var(--zIndex) / var(--items) * 3 - 2);
+overflow: hidden;
+position: absolute;
+z-index: var(--zIndex);
+width: var(--width);
+height: var(--height);
+margin: calc(var(--height) * -0.5) 0 0 calc(var(--width) * -0.5);
+border-radius: 10px;
+top: 50%;
+left: 50%;
+-webkit-user-select: none;
+   -moz-user-select: none;
+    -ms-user-select: none;
+        user-select: none;
+transform-origin: 0% 100%;
+box-shadow: 0 10px 50px 10px rgba(0, 0, 0, 0.5);
+background: black;
+pointer-events: all;
+transform: translate(var(--x), var(--y)) rotate(var(--rot));
+transition: transform 0.8s cubic-bezier(0, 0.02, 0, 1);
 }
 .carousel-item .carousel-box {
-  position: absolute;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  transition: opacity 0.8s cubic-bezier(0, 0.02, 0, 1);
-  opacity: var(--opacity);
-  font-family: "Orelo-sw-db", serif;
+position: absolute;
+z-index: 1;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+transition: opacity 0.8s cubic-bezier(0, 0.02, 0, 1);
+opacity: var(--opacity);
+font-family: "Orelo-sw-db", serif;
 }
 .carousel-item .carousel-box:before {
-  content: "";
-  position: absolute;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.5));
+content: "";
+position: absolute;
+z-index: 1;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.5));
 }
 .carousel-item .title {
-  position: absolute;
-  z-index: 1;
-  color: #fff;
-  bottom: 20px;
-  left: 20px;
-  transition: opacity 0.8s cubic-bezier(0, 0.02, 0, 1);
-  font-size: clamp(20px, 3vw, 30px);
-  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+position: absolute;
+z-index: 1;
+color: #fff;
+bottom: 20px;
+left: 20px;
+transition: opacity 0.8s cubic-bezier(0, 0.02, 0, 1);
+font-size: clamp(20px, 3vw, 30px);
+text-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
 }
 .carousel-item .num {
-  position: absolute;
-  z-index: 1;
-  color: #fff;
-  top: 10px;
-  left: 20px;
-  transition: opacity 0.8s cubic-bezier(0, 0.02, 0, 1);
-  font-size: clamp(20px, 10vw, 80px);
+position: absolute;
+z-index: 1;
+color: #fff;
+top: 10px;
+left: 20px;
+transition: opacity 0.8s cubic-bezier(0, 0.02, 0, 1);
+font-size: clamp(20px, 10vw, 80px);
 }
 .carousel-item img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  pointer-events: none;
+width: 100%;
+height: 100%;
+-o-object-fit: cover;
+   object-fit: cover;
+pointer-events: none;
 }
 
 .layout {
-  position: absolute;
-  z-index: 0;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
+position: absolute;
+z-index: 0;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+pointer-events: none;
 }
 .layout:before {
-  content: "";
-  position: absolute;
-  z-index: 1;
-  top: 0;
-  left: 90px;
-  width: 10px;
-  height: 100%;
-  border: 1px solid #fff;
-  border-top: none;
-  border-bottom: none;
-  opacity: 0.15;
+content: "";
+position: absolute;
+z-index: 1;
+top: 0;
+left: 90px;
+width: 10px;
+height: 100%;
+border: 1px solid #fff;
+border-top: none;
+border-bottom: none;
+opacity: 0.15;
 }
 .layout .box {
-  position: absolute;
-  bottom: 0;
-  left: 30px;
-  color: #fff;
-  transform-origin: 0% 10%;
-  transform: rotate(-90deg);
-  font-size: 9px;
-  line-height: 1.4;
-  text-transform: uppercase;
-  opacity: 0.4;
+position: absolute;
+bottom: 0;
+left: 30px;
+color: #fff;
+transform-origin: 0% 10%;
+transform: rotate(-90deg);
+font-size: 9px;
+line-height: 1.4;
+text-transform: uppercase;
+opacity: 0.4;
 }
 
 .logo {
-  position: absolute;
-  z-index: 2;
-  top: 28px;
-  right: 28px;
-  width: 30px;
-  height: 30px;
-  background: #fff;
-  border-radius: 50%;
-  opacity: 0.5;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: "Orelo-sw-db", serif;
-  pointer-events: all;
-  color: black;
-  text-decoration: none;
-  font-size: 20px;
-  overflow: hidden;
-  padding-bottom: 0.1em;
+position: absolute;
+z-index: 2;
+top: 28px;
+right: 28px;
+width: 30px;
+height: 30px;
+background: #fff;
+border-radius: 50%;
+opacity: 0.5;
+display: flex;
+justify-content: center;
+align-items: center;
+font-family: "Orelo-sw-db", serif;
+pointer-events: all;
+color: black;
+text-decoration: none;
+font-size: 20px;
+overflow: hidden;
+padding-bottom: 0.1em;
 }
 
 .social {
-  position: absolute;
-  z-index: 10;
-  bottom: 20px;
-  right: 25px;
-  color: #fff;
-  opacity: 0.4;
+position: absolute;
+z-index: 10;
+bottom: 20px;
+right: 25px;
+color: #fff;
+opacity: 0.4;
 }
 .social a {
-  display: inline-block;
-  margin-left: 3px;
+display: inline-block;
+margin-left: 3px;
 }
 .social svg {
-  --fill: #fff;
-  width: 35px;
-  height: 35px;
+--fill: #fff;
+width: 35px;
+height: 35px;
 }
 
 .cursor {
-  position: fixed;
-  z-index: 10;
-  top: 0;
-  left: 0;
-  --size: 40px;
-  width: var(--size);
-  height: var(--size);
-  border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  margin: calc(var(--size) * -0.5) 0 0 calc(var(--size) * -0.5);
-  transition: transform 0.85s cubic-bezier(0, 0.02, 0, 1);
-  display: none;
-  pointer-events: none;
+position: fixed;
+z-index: 10;
+top: 0;
+left: 0;
+--size: 40px;
+width: var(--size);
+height: var(--size);
+border-radius: 50%;
+border: 1px solid rgba(255, 255, 255, 0.2);
+margin: calc(var(--size) * -0.5) 0 0 calc(var(--size) * -0.5);
+transition: transform 0.85s cubic-bezier(0, 0.02, 0, 1);
+display: none;
+pointer-events: none;
 }
+
 @media (pointer: fine) {
-  .cursor {
-    display: block;
-  }
+.cursor {
+  display: block;
+}
 }
 
 .cursor2 {
-  --size: 2px;
-  transition-duration: 0.7s;
+--size: 2px;
+transition-duration: 0.7s;
 }
 h3 {
-    color: aliceblue;
-    margin-left: 100px;
+  color: aliceblue;
+  margin-left: 100px;
 }
-    </style>
-<div class="carousel">
+  </style>
+  <script>
+    function showAlert(city, funFact) {
+      alert("Did you know that " + city + " " + funFact);
+    }
+  </script>
+  
+  <div class="carousel">
     <h3>Places which hold a special place in my heart</h3>
-    <div class="carousel-item">
-      <div class="carousel-box">
-        <div class="title">Jacksonville, FL</div>
-        <div class="num">01</div>
-        <img src="https://nostr.build/p/nb10440.jpg" />
+  
+    <div onclick="showAlert('Jacksonville, FL', 'is the largest city by area in the contiguous United States.')">
+      <div class="carousel-item">
+        <div class="carousel-box">
+          <div class="title">Jacksonville, FL</div>
+          <div class="num">01</div>
+          <img src="https://nostr.build/p/nb10440.jpg" />
+        </div>
       </div>
     </div>
   
-    <div class="carousel-item">
-      <div class="carousel-box">
-        <div class="title">Boston, MA</div>
-        <div class="num">02</div>
-        <img src="https://nostr.build/p/nb1558.jpeg" />
+    <div onclick="showAlert('Boston, MA', 'is home to the oldest public park in the United States, the Boston Common.')">
+      <div class="carousel-item">
+        <div class="carousel-box">
+          <div class="title">Boston, MA</div>
+          <div class="num">02</div>
+          <img src="https://nostr.build/p/nb1558.jpeg" />
+        </div>
       </div>
     </div>
   
-    <div class="carousel-item">
-      <div class="carousel-box">
-        <div class="title">Atlanta, GA</div>
-        <div class="num">03</div>
-        <img src="https://nostr.build/p/nb10441.jpg" />
+    <div onclick="showAlert('Atlanta, GA', 'is known as the City in a Forest due to its abundance of trees and green spaces.')">
+      <div class="carousel-item">
+        <div class="carousel-box">
+          <div class="title">Atlanta, GA</div>
+          <div class="num">03</div>
+          <img src="https://nostr.build/p/nb10441.jpg" />
+        </div>
       </div>
     </div>
   
-    <div class="carousel-item">
-      <div class="carousel-box">
-        <div class="title">Miami, FL</div>
-        <div class="num">04</div>
-        <img src="https://nostr.build/p/nb10442.jpg" />
+    <div onclick="showAlert('Miami, FL', 'is the only major U.S. city founded by a woman, Julia Tuttle.')">
+      <div class="carousel-item">
+        <div class="carousel-box">
+          <div class="title">Miami, FL</div>
+          <div class="num">04</div>
+          <img src="https://nostr.build/p/nb10442.jpg" />
+        </div>
       </div>
     </div>
   
-    <div class="carousel-item">
-      <div class="carousel-box">
-        <div class="title">Bogota, Colombia</div>
-        <div class="num">05</div>
-        <img src="https://nostr.build/p/nb10444.jpg" />
+    <div onclick="showAlert('Bogota, Colombia', 'is located at an altitude of 2,640 meters (8,660 feet) above sea level.')">
+      <div class="carousel-item">
+        <div class="carousel-box">
+          <div class="title">Bogota, Colombia</div>
+          <div class="num">05</div>
+          <img src="https://nostr.build/p/nb10444.jpg" />
+        </div>
       </div>
     </div>
   
-    <div class="carousel-item">
-      <div class="carousel-box">
-        <div class="title">Athens, Greece</div>
-        <div class="num">06</div>
-        <img src="https://nostr.build/p/nb10443.jpg" />
+    <div onclick="showAlert('Athens, Greece', 'is widely considered the birthplace of democracy and the cradle of Western civilization.')">
+      <div class="carousel-item">
+        <div class="carousel-box">
+          <div class="title">Athens, Greece</div>
+          <div class="num">06</div>
+          <img src="https://nostr.build/p/nb10443.jpg" />
+        </div>
       </div>
     </div>
   
-    <div class="carousel-item">
-      <div class="carousel-box">
-        <div class="title">New York City, NY</div>
-        <div class="num">07</div>
-        <img src="https://nostr.build/p/nb10445.jpg" />
+    <div onclick="showAlert('New York City, NY', 'is known as the City that Never Sleeps.')">
+      <div class="carousel-item">
+        <div class="carousel-box">
+          <div class="title">New York City, NY</div>
+          <div class="num">07</div>
+          <img src="https://nostr.build/p/nb10445.jpg" />
+        </div>
       </div>
     </div>
-  
-    <div class="carousel-item">
-      <div class="carousel-box">
-        <div class="title">Portsmouth, NH</div>
-        <div class="num">08</div>
-        <img src="https://nostr.build/p/nb10446.jpg" />
+    
+    <div onclick="showAlert('Portsmouth, NH', 'is one of the oldest cities in the United States, settled in 1623')">
+      <div class="carousel-item">
+        <div class="carousel-box">
+          <div class="title">Portsmouth, NH</div>
+          <div class="num">08</div>
+          <img src="https://nostr.build/p/nb10446.jpg" />
+        </div>
       </div>
     </div>
-
-    <div class="carousel-item">
+    
+    <div onclick="showAlert('Medellín, Colombia', 'is known as the City of Eternal Spring due to its pleasant climate.')">
+      <div class="carousel-item">
         <div class="carousel-box">
           <div class="title">Medellín, Colombia</div>
           <div class="num">09</div>
           <img src="https://nostr.build/p/nb10448.jpg" />
         </div>
-    </div>
-
-    <div class="carousel-item">
-      <div class="carousel-box">
-        <div class="title">Philadelphia, PA</div>
-        <div class="num">10</div>
-        <img src="https://nostr.build/p/nb10447.jpg" />
       </div>
     </div>
-  </div>
+    
+    <div onclick="showAlert('Philadelphia, PA', 'is home to the Liberty Bell and Independence Hall, where the U.S. Declaration of Independence and Constitution were adopted.')">
+      <div class="carousel-item">
+        <div class="carousel-box">
+          <div class="title">Philadelphia, PA</div>
+          <div class="num">10</div>
+          <img src="https://nostr.build/p/nb10447.jpg" />
+        </div>
+      </div>
+    </div>
   
   <div class="layout">
     <div class="box">I like memes<br />open source software<br />and mucking bin.</div>
@@ -316,7 +341,7 @@ h3 {
   <div class="cursor cursor2"></div>
 
   <script>
-    let progress = 50
+let progress = 50
 let startX = 0
 let active = 0
 let isDown = false
@@ -407,6 +432,6 @@ document.addEventListener('mouseup', handleMouseUp)
 document.addEventListener('touchstart', handleMouseDown)
 document.addEventListener('touchmove', handleMouseMove)
 document.addEventListener('touchend', handleMouseUp)
-  </script>
+</script>
 </body>
 </html>
