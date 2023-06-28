@@ -1114,4 +1114,11 @@ section {
   }
 }
 
-/*# sourceMappingURL=styles.css.map */
+.v4v {
+  background-color: #121520;
+  padding: 5rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
