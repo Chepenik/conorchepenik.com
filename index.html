@@ -1,482 +1,395 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Conor Chepenik</title>
-  
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="styles/styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-</head>
-<body class="main-content">
-    <header class="container header active" id="home">
-        <div class="header-content">
-            <div class="left-header">
-                <div class="h-shape"></div>
-                <div class="image">
-                    <img src="img/hero.png" alt="">
-                </div>
-            </div>
-            <div class="right-header">
-                <h1 class="name">
-                    Hi, I'm <span>Conor Chepenik.</span>
-                    A Web Developer.
-                </h1>
-                <p>
-                    Welcome to my website, where I am driven by the belief that technology can create a better world. Through my deep exploration of the Bitcoin ecosystem, I have gained valuable insights into various domains such as health, finance, and computer science. The principles and ethos of the Bitcoin community have paved the way for a more fair and efficient system, built on decentralization, verification, and open access.
-
-                    Bitcoin's groundbreaking capabilities have revolutionized value transfer, eliminating the need for intermediaries and introducing new opportunities for financial inclusion. It has the power to empower individuals who have been excluded from the traditional financial system. This potential for positive change has fueled my optimism for the future of humanity.
-                    
-                    In a world that faces numerous challenges, we are blessed with abundant technological advancements. Even the most economically disadvantaged individuals today enjoy luxuries that were once reserved for the privileged few in history. This realization has inspired me to devote a substantial part of my time to developing tools and solutions that can benefit all of humanity.
-                    
-                    Thank you for taking the time to visit my personal website. If you share my vision and are interested in creating a website similar to this one, I invite you to explore the offerings in my store below. Together, we can harness the power of technology to shape a brighter future for all.
-                 </p>
-                   
-                <div class="btn-con">
-                    <a href="https://magicwebstore.xyz/index.html?pubkey=02b1a6c208420d3eb5a625aa8c79689e1dd4ea94f82286d06e1df7a05e2c3a482f&relays=%5B%22wss://nostrue.com%22,%22wss://relayable.org%22,%22wss://nostr.oxtr.dev%22%5D" class="main-btn" target="_blank">
-                        <span class="btn-text">Purchase Your Own Website</span>
-                        <span class="btn-icon"><i class="fab fa-bitcoin"></i></span>
-                    </a>
-                </div>
-            </div>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="mediaqueries.css" />
+  </head>
+  <body>
+    <nav id="desktop-nav">
+      <div class="logo">Conor Chepenik</div>
+      <div>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#Proof-Of-Work">Proof-Of-Work</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <nav id="hamburger-nav">
+      <div class="logo">Conor Chepenik</div>
+      <div class="hamburger-menu">
+        <div class="hamburger-icon" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
-        <br>
-        <br>
-        <div class="v4v">   
-            <lightning-widget 
-            name="Binmucker Chep" 
-            accent="#ff9900" 
-            to="chep@getalby.com" 
-            image="https://nostr.build/p/nb11376.jpg" />
-          <script src="https://embed.twentyuno.net/js/app.js"></script> 
-        </div>  
-        <br>
-        <br>
-        <br>
-    </header>
-    <main>
-        <section class="container about" id="about">
-            <div class="main-title">
-                <h2>About <span>me</span><span class="bg-text">my stats</span></h2>
-            </div>
-            <div class="about-container">
-                <div class="left-about">
-                    <h4>Information About me</h4>
-                    <p>
-                        I graduated during a pandemic and started working in tech sales shortly after. This taught me how to do cold outreach and deal with rejection. Something you can expect to receive from fiat maxis when you tell them their favorite currency is backed by nothing more than violence from the state.
-                    Jokes aside, I’m a big fan of learning about new technologies and helping educate others. I taught myself how to code to make this website and MassAdoption.net. Enjoyed the process so much that I decided to take a software engineering bootcamp which I'm currently enrolled in.  I also write Bitcoin articles to help educate anyone willing to listen. As they say the best way to learn something is by teaching. When I’m not busy doing these things you can find me running, reading, hanging around a comedy club or enjoying time with my daughter. I love meeting new people so feel free to shoot me a DM on Twitter or an email at chepenikconor@gmail.com 
-                    </p>
-                    <div class="btn-con">
-                        <a href="https://chepenik.github.io/conorchepenik.com/city.html" class="main-btn" target="_blank">
-                            <span class="btn-text">Cities I love</span>
-                            <span class="btn-icon"><i class="fab fa-bitcoin"></i></span>
-                        </a>
-                    </div>
-                </div>
-                <div class="right-about">
-                    <div class="about-item">
-                        <div class="abt-text">
-                            <p class="large-text">460+</p>
-                            <p class="small-text">Days Straight Of Writing & Posting On<br /> Medium</p>
-                        </div>
-                    </div>
-                    <div class="about-item">
-                        <div class="abt-text">
-                            <p class="large-text">5+</p>
-                            <p class="small-text">Years of <br /> Studying Bitcoin</p>
-                        </div>
-                    </div>
-                    <div class="about-item">
-                        <div class="abt-text">
-                            <p class="large-text">11 Years</p>
-                            <p class="small-text">Of <br /> Football Played</p>
-                        </div>
-                    </div>
-                    <div class="about-item">
-                        <div class="abt-text">
-                            <p class="large-text">10+</p>
-                            <p class="small-text">Articles <br /> Published By Bitcoin Magazine, Satoshi's Journal, Zerohedge, & Bitcoinnews</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="about-stats">
-                <h4 class="stat-title">My Skills</h4>
-                <div class="progress-bars">
-                    <div class="progress-bar">
-                        <p class="prog-title">html5</p>
-                        <div class="progress-con">
-                            <p class="prog-text">80%</p>
-                            <div class="progress">
-                                <span class="html"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="progress-bar">
-                        <p class="prog-title">css3</p>
-                        <div class="progress-con">
-                            <p class="prog-text">70%</p>
-                            <div class="progress">
-                                <span class="css"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="progress-bar">
-                        <p class="prog-title">javascript</p>
-                        <div class="progress-con">
-                            <p class="prog-text">50%</p>
-                            <div class="progress">
-                                <span class="js"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="progress-bar">
-                        <p class="prog-title">Sales</p>
-                        <div class="progress-con">
-                            <p class="prog-text">100%</p>
-                            <div class="progress">
-                                <span class="react"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="progress-bar">
-                        <p class="prog-title">Bitcoin</p>
-                        <div class="progress-con">
-                            <p class="prog-text">90%</p>
-                            <div class="progress">
-                                <span class="node"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="progress-bar">
-                        <p class="prog-title">Stand-Up Comedy</p>
-                        <div class="progress-con">
-                            <p class="prog-text">70%</p>
-                            <div class="progress">
-                                <span class="python"></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <h4 class="stat-title">My Timeline</h4>
-                <div class="timeline">
-                <div class="timeline-item">
-                    <div class="tl-icon">
-                        <i class="fas fa-briefcase"></i>
-                    </div>
-                    <p class="tl-duration">2012 - 2016</p>
-                    <h5>High School Student<span> - Episcopal School Of Jacksonville</span></h5>
-                    <p>
-                        Obessed with all kind of sports during my highscool career. Played on the Football, Wrestling, and Lacrosse teams. In between Football and Wrestling season I acted in the school plays. Got awarded best multi-sport athlete my senior year and came in 2nd at the State Finals for wrestling in the heavyweight division.
-                <div class="timeline-item">
-                    <div class="tl-icon">
-                        <i class="fas fa-briefcase"></i>
-                    </div>
-                    <p class="tl-duration">2016-2020</p>
-                    <h5>Student Athlete<span> - Tufts University</span></h5>
-                    <p>
-                        Got a B.A with a 3.5 GPA average in Film and Media & Entrepreneurship. Played 4 years of varisty Football and recorded 30+ tackles in 9 games my senior year. Discovered Bitcoin in 2017 and was a member of the Tufts Blockchain Club as well as the Tufts University Television Club.
-                    </p>
-                </div>
-                <div class="timeline-item">
-                    <div class="tl-icon">
-                        <i class="fas fa-briefcase"></i>
-                    </div>
-                    <p class="tl-duration">2020-2022</p>
-                    <h5>Business Development Team Lead<span> - Reveneer</span></h5>
-                    <p>
-                        Started as a Business Development Representative and was promoted to Business Development Team Lead in May 2021.
-                        Among the first 150 employees, experienced growth to ~ 250 employees.
-                        Managed outbound sales team selling web/app development, backup software, learning management solutions, and digital signage. Companies sold for include Quantum Mob, Datto, and Yodeck.
-                        Helped coach other Sales teams via mock calls and sales cadence building. 
-                        Spearheaded the employee intranet portal where Reveneer employees could see all their sales data consolidated over the course of their career at Reveneer.
-                    </p>
-                </div>
-                <div class="timeline-item">
-                    <div class="tl-icon">
-                        <i class="fas fa-briefcase"></i>
-                    </div>
-                    <p class="tl-duration">April 2022 - Jan 2023</p>
-                    <h5>Account Executive<span> - Datadog</span></h5>
-                    <p>
-                        Leverage LinkedIn Sales Navigator, Builtwith.com, and Zoominfo to create personalized outreach and generate business via cold calling, email and LinkedIn/Twitter outreach.
-                        Helped coach Sales Development Reps on strategy and best practices when doing business development activities.
-                        Used Salesforce plus Zoom to close and onboard accounts such as The Block, Foodoo.ai, Transpose, Terracycle, and Usepower.com to Datadog.
-                    </p>
-                </div>
-                <div class="timeline-item">
-                    <div class="tl-icon">
-                        <i class="fas fa-briefcase"></i>
-                    </div>
-                    <p class="tl-duration">June 2022 - Present</p>
-                    <h5>Contributor<span> - Bitcoin Magazine</span></h5>
-                    <p>
-                        Writing articles in my free time to help educate the world about the importance of having a monetary system backed by open-source software and math rather than violence. They say the best way to learn something is by teaching it. I’ve found this to be especially true. The more articles I write the better I understand Bitcoin.
-
-                    </p>
-                </div>
-                <div class="timeline-item">
-                    <div class="tl-icon">
-                        <i class="fas fa-briefcase"></i>
-                    </div>
-                    <p class="tl-duration">2020-Present</p>
-                    <h5>The Conor Chepenik Podcast<span> - Podcaster</span></h5>
-                    <p>
-                        I've hosted a podcast since graduating college in 2020. I've been through various names including The Not For Everyone Podcast, The Binmucker Podcast, and now The Conor Chepenik Podcast. I've found I most enjoy these conversations when I meet a Bitcoiner in the wild. When that happens I ask them on my show to discuss the greatest form of money humanity has ever had!
-                    </p>
-                </div>
-                <div class="timeline-item">
-                    <div class="tl-icon">
-                        <i class="fas fa-briefcase"></i>
-                    </div>
-                    <p class="tl-duration">January 2023-Present</p>
-                    <h5>Launch Academy<span> - Full Stack Developer</span></h5>
-                    <p>
-                        I'm currently an Apprentice Full Stack Developer at Launch Academy in Boston, MA. I'm working on a web application called Habit-Chain that helps people track their positive habits. I spend 8 hours a day learning and implementing Agile methodologies, pair programming, test-driven development (TDD), object-oriented programming (OOP), continuous integration, and more.
-                    </p>
-                </div>
-            </div>
-        </section>
-        <section class="container" id="portfolio">
-            <div class="main-title">
-                <h2>My <span>Portfolio</span><span class="bg-text">My Work</span></h2>
-            </div>
-            <p class="port-text">
-               Published in Bitcoin Magazine (Both Print Magazine & Online), Zerohedge, bitcoinnews.com. I've included links to my personal Medium and podcast as well.
-            </p>
-            <div class="portfolios">
-                <div class="portfolio-item">
-                    <div class="image">
-                        <img src="img/port1.jpg" alt="">
-                    </div>
-                    <div class="hover-items">
-                        <h3>My Writing</h3>
-                        <div class="icons">
-                            <a href="https://bitcoinmagazine.com/authors/conor-chepenik" class="icon" target="_blank">
-                                <i class="fab fa-bitcoin"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <div class="image">
-                        <img src="img/port2.jpg" alt="">
-                    </div>
-                    <div class="hover-items">
-                        <h3>My Writing</h3>
-                        <div class="icons">
-                            <a href="https://www.zerohedge.com/crypto/bitcoin-aligns-incentives-perfect-way" class="icon" target="_blank">
-                                <i class="far fa-money-bill-alt"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <div class="image">
-                        <img src="img/port3.jpg" alt="">
-                    </div>
-                    <div class="hover-items">
-                        <h3>My Medium</h3>
-                        <div class="icons">
-                            <a href="https://medium.com/@chepenikconor" class="icon" target="_blank">
-                                <i class="fab fa-medium-m"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <div class="image">
-                        <img src="img/The Conor Chepenik Podcast.png" alt="">
-                    </div>
-                    <div class="hover-items">
-                        <h3>My Podcast</h3>
-                        <div class="icons">
-                            <a href="https://open.spotify.com/show/6PIHXUd8l12OJJiecI0YjR" class="icon" target="_blank">
-                                <i class="fas fa-microphone"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <div class="image">
-                        <img src="img/bitcoinnews.jpeg" alt="">
-                    </div>
-                    <div class="hover-items">
-                        <h3>Bitcoinnews.com</h3>
-                        <div class="icons">
-                            <a href="https://bitcoinnews.com/author/chep/" class="icon" target="_blank">
-                                <i class="fab fa-bitcoin"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <div class="image">
-                        <img src="img/commonsense.jpeg" alt="">
-                    </div>
-                    <div class="hover-items">
-                        <h3>The Common Sense Movement</h3>
-                        <div class="icons">
-                            <a href="https://www.thecommonsensemovement.com/news/fighting-withdrawal" class="icon" target="_blank">
-                                <i class="fas fa-feather-alt"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        <section class="container" id="blogs">
-            <div class="blogs-content">
-                <div class="main-title">
-                    <h2>Memes <span>To Better Understand Me</span><span class="bg-text">Call Those Me-Mes</span></h2>
-                </div>
-                <div class="blogs">
-                    <div class="blog">
-                        <img src="img/port6.jpg" alt="">
-                        <div class="blog-text">
-                            <h4>
-                                Bitcoin =! crypto
-                            </h4>
-                            <p>
-                               Most people have to learn this via an expensive lesson.
-                               Luckily, if you hold your own keys there is no worries about contagion! 
-                               Bitcoin held in self-custody has no counter party risk.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="blog">
-                        <img src="img/blog1.jpg" alt="">
-                        <div class="blog-text">
-                            <h4>
-                                I love a shooter video game.
-                            </h4>
-                            <p>
-                                Real war between nation-states should be avoided at all costs though.
-                                I personally think that Central Banks cause war with quantitative easing a.k.a money printing.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="blog">
-                        <img src="img/blog2.jpg" alt="">
-                        <div class="blog-text">
-                            <h4>
-                                Humans are social creatures
-                            </h4>
-                            <p>
-                              You can never know what someone else is really going through 
-                              if you don't get to walk in their shoes so be kind.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="blog">
-                        <img src="img/blog3.jpg" alt="">
-                        <div class="blog-text">
-                            <h4>
-                                Can you guess the answer?
-                            </h4>
-                            <p>
-                                That's right: nothing!
-                                You don't replace the lender of last resort who can create money out of thin air.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="blog">
-                        <img src="img/port8.jpg" alt="">
-                        <div class="blog-text">
-                            <h4>
-                                Aesthetics
-                            </h4>
-                            <p>
-                               Big Coke Vs. Big Tobacco.
-                               Who You Taking?
-                            </p>
-                        </div>
-                    </div>
-                    <div class="blog">
-                        <img src="img/port9.jpg" alt="">
-                        <div class="blog-text">
-                            <h4>
-                                Finding a partner is important
-                            </h4>
-                            <p>
-                                And so is ending Central Banks monopoly
-                                on the cost of capital!
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="container contact" id="contact">
-            <div class="contact-container">
-                <div class="main-title">
-                    <h2>Check Out<span> My Merch</span><span class="bg-text">Fresh Fits</span></h2>
-                </div>
-                <div class="contact-content-con">
-                    <div class="left-contact">
-                        <h4>Thanks For Checking Out My Website</h4>
-                        <p>
-                            I've always had a dream of starting my own clothing company, and although I never registered an LLC, I discovered a way to create designs and print them onto clothing with the help of the internet. I'm inspired by Hal Finney's quote about using technology to liberate and protect people, rather than to control them. If you're interested in purchasing something with bitcoin, DM me on Twitter with your size, address, and full name and I'll send you a lightning QR code to place your order with a 21% discount. I plan on installing BTCpayserver in the future but in the meantime if you don't want to go through my Twitter DMs you can pay with fiat as well :P
-                        </p> 
-                        <div class="contact-icons">
-                            <div class="contact-icon">
-                                <a href="https://geyser.fund/project/massadoption" target="_blank">
-                                    <i class="fas fa-hand-holding-heart"></i>
-                                </a>
-                                <a href="https://twitter.com/ConorChepenik" target="_blank">
-                                    <i class="fab fa-twitter"></i>
-                                </a>
-                                <a href="https://github.com/Chepenik" target="_blank">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                                <a href="https://www.youtube.com/@ConorChepenik" target="_blank">
-                                    <i class="fab fa-youtube"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="right-contact"> 
-                        <div class="submit-btn">
-                            <a href="https://chep.creator-spring.com/" class="main-btn-finalpage">
-                                <span class="btn-text">Peep the shop</span>
-                                <span class="btn-icon"><i class="fas fa-shopping-bag"></i></span>
-                            </a>
-                        </div>
-                        <div class="shop-image">
-                            <img src="img/sloananddad.jpeg" alt="Chep Holding Sloan In Dope Hoodie">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-    </main>
-
-    <div class="controls">
-        <div class="control active-btn glow-on-hover" data-id="home">
-          <i class="fas fa-home"></i>
-        </div>
-        <div class="control glow-on-hover" data-id="about">
-          <i class="fas fa-user"></i>
-        </div>
-        <div class="control glow-on-hover" data-id="portfolio">
-          <i class="fas fa-briefcase"></i>
-        </div>
-        <div class="control glow-on-hover" data-id="blogs">
-          <i class="far fa-newspaper"></i>
-        </div>
-        <div class="control glow-on-hover" data-id="contact">
-          <i class="fas fa-shopping-bag"></i>
+        <div class="menu-links">
+          <li><a href="#about" onclick="toggleMenu()">About</a></li>
+          <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+          <li><a href="#Proof-Of-Work" onclick="toggleMenu()">Proof-Of-Work</a></li>
+          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
         </div>
       </div>
-      <div class="theme-btn">
-        <i class="fas fa-adjust"></i>
-      </div>      
-    <script src="app.js"></script>
-</body>
+    </nav>
+    <section id="profile">
+      <div class="section__pic-container">
+        <img class="profilepic" src="./assets/profile-pic.png" alt="John Doe profile picture" />
+      </div>
+      <div class="section__text">
+        <p class="section__text__p1">Hello, I'm</p>
+        <h1 class="title">Conor Chepenik</h1>
+        <p class="section__text__p2">Full Stack Developer</p>
+        <div class="btn-container">
+          <button
+            class="btn btn-color-2"
+            onclick="window.open('./assets/resume-example.pdf')"
+          >
+            Download CV
+          </button>
+          <button class="btn btn-color-1" onclick="location.href='./#contact'">
+            Contact Info
+          </button>
+        </div>
+        <div id="socials-container">
+          <img
+            src="./assets/linkedin.png"
+            alt="My LinkedIn profile"
+            class="icon"
+            onclick="location.href='https://www.linkedin.com/in/conorchepenik/'"
+          />
+          <img
+            src="./assets/github.png"
+            alt="My Github profile"
+            class="icon"
+            onclick="location.href='https://github.com/Chepenik'"
+          />
+        </div>
+      </div>
+    </section>
+    <section id="about">
+      <p class="section__text__p1">Get To Know More</p>
+      <h1 class="title">About Me</h1>
+      <div class="section-container">
+        <div class="section__pic-container">
+          <img
+            src="./assets/about-pic.png"
+            alt="Profile picture"
+            class="about-pic"
+          />
+        </div>
+        <div class="about-details-container">
+          <div class="about-containers">
+            <div class="details-container">
+              <img
+                src="./assets/experience.png"
+                alt="Experience icon"
+                class="icon"
+              />
+              <h3>Experience</h3>
+              <p>3 years in tech sales</p>
+              <p>1 year in web development</p>
+              <p>1 year writing</p>
+            </div>
+            <div class="details-container">
+              <img
+                src="./assets/education.png"
+                alt="Education icon"
+                class="icon"
+              />
+              <h3>Education</h3>
+              <p>B.A Film & Media, Entrepreneurship <br />Tufts University</p>
+            </div>
+          </div>
+          <div class="text-container">
+            <p>
+              Sports have been a large part of my life. The teamwork, communication skills, work ethic and freindships that my athletic career brought me are things I will cherish forever. I played football for eleven years, including D3 football at Tufts University. After graduating during a pandemic, I set off on an exciting journey in the tech sales industry. My first gig was with a company called Reveneer, where I specialized in handling outbound sales for various organizations. Then, I joined the crew at Datadog as an Account Executive, running the whole sales cycle. After almost three years of selling cutting-edge tech and sharpening my business development skills, I decided to pivot into development. So, I completed <a href="https://launchacademy.com/" target="_blank">Launch Academy</a> and have been diving into code ever since.
+
+              Outside the 9-to-5 hustle, I have many interests. I'm really into writing about Bitcoin, enjoy hosting podcasts, and find my zen when I'm out running. I also get a kick out of building web apps, getting lost in great books, and having deep philosophical chats with people who can expand my worldview."
+            
+              </p>
+          </div>
+        </div>
+      </div>
+      <img
+        src="./assets/arrow.png"
+        alt="Arrow icon"
+        class="icon arrow"
+        onclick="location.href='./#experience'"
+      />
+    </section>
+    <section id="experience">
+      <p class="section__text__p1">Explore My</p>
+      <h1 class="title">Experience</h1>
+      <div class="experience-details-container">
+        <div class="about-containers">
+          <div class="details-container">
+            <h2 class="experience-sub-title">Frontend Development</h2>
+            <div class="article-container">
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>HTML</h3>
+                  <p>Experienced</p>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>CSS</h3>
+                  <p>Experienced</p>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>Tailwind</h3>
+                  <p>Intermediate</p>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>JavaScript</h3>
+                  <p>Experienced</p>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>TypeScript</h3>
+                  <p>Experienced</p>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>React</h3>
+                  <p>Intermediate</p>
+                </div>
+              </article>
+            </div>
+          </div>
+          <div class="details-container">
+            <h2 class="experience-sub-title">Backend Development</h2>
+            <div class="article-container">
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>PostgreSQL</h3>
+                  <p>Intermediate</p>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>Node JS</h3>
+                  <p>Experienced</p>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>Express JS</h3>
+                  <p>Intermediate</p>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>Next.js</h3>
+                  <p>Experienced</p>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>Java</h3>
+                  <p>Intermediate</p>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>Git</h3>
+                  <p>Intermediate</p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+      <img
+        src="./assets/arrow.png"
+        alt="Arrow icon"
+        class="icon arrow"
+        onclick="location.href='./#Proof-Of-Work'"
+      />
+    </section>
+    <section id="Proof-Of-Work">
+      <p class="section__text__p1">Browse My Recent</p>
+      <h1 class="title">Proof-Of-Work</h1>
+      <div class="experience-details-container">
+        <div class="about-containers">
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img
+                src="./assets/project-1.png"
+                alt="Project 1"
+                class="Proof-Of-Work-img"
+              />
+            </div>
+            <h2 class="experience-sub-title Proof-Of-Work-title">MassAdoption.net</h2>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 Proof-Of-Work-btn"
+                onclick="location.href='https://github.com/'"
+              >
+                Github
+              </button>
+              <button
+                class="btn btn-color-2 Proof-Of-Work-btn"
+                onclick="location.href='https://github.com/'"
+              >
+                Website
+              </button>
+            </div>
+          </div>
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img
+                src="./assets/project-2.png"
+                alt="Project 2"
+                class="Proof-Of-Work-img"
+              />
+            </div>
+            <h2 class="experience-sub-title Proof-Of-Work-title">My Writing</h2>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 Proof-Of-Work-btn"
+                onclick="location.href='/writing.html'"
+              >
+                Published Work
+              </button>
+              <button
+                class="btn btn-color-2 Proof-Of-Work-btn"
+                onclick="location.href='https://github.com/'"
+              >
+                Medium
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <img
+        src="./assets/arrow.png"
+        alt="Arrow icon"
+        class="icon arrow"
+        onclick="location.href='./#contact'"
+      />
+    </section>
+    <section id="contact">
+      <p class="section__text__p1">Get in Touch</p>
+      <h1 class="title">Contact Me</h1>
+      <div class="contact-info-upper-container">
+        <div class="contact-info-container">
+          <img
+            src="./assets/email.png"
+            alt="Email icon"
+            class="icon contact-icon email-icon"
+          />
+          <p><a href="chepenikconor@gmail.com">chepenikconor@gmail.com</a></p>
+        </div>
+        <div class="contact-info-container">
+          <img
+            src="./assets/linkedin.png"
+            alt="LinkedIn icon"
+            class="icon contact-icon"
+          />
+          <p><a href="https://www.linkedin.com/in/conorchepenik/">LinkedIn</a></p>
+        </div>
+      </div>
+    </section>
+    <h3 class="tipheader">If you got value out of my work consider donating some satoshis with lightning or on-chain to keep me motivated to write, create content, and show others the power of a value 4 value enabled internet</h3>
+    <p class="tipheader">To donate on chain use: bc1qv3qwhejtk84yjft2r8nu634p4hkkv6n8gfh09ga5d0phenj607wsufdqgd or use QR code</p>
+    <div class="center-container">
+      <img class="qrcode" src="./assets/onchainwalletqrcode.jpeg" alt="">
+      <lightning-widget 
+        name="Conor Chepenik" 
+        accent="#7e9ca9" 
+        to="chep@getalby.com" 
+        image="https://i.nostr.build/mYa7.png" 
+        amounts="2100, 21000, 210000"
+        class="lightning-widget"
+      />
+    </div>
+  <script src="https://embed.twentyuno.net/js/app.js"></script>
+
+  <footer>
+    <nav>
+      <div class="nav-links-container">
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#Proof-Of-Work">Proof-Of-Work</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <p>Copyright &#169; 2023 Conor Chepenik. All Rights Reserved.</p>
+  </footer>
+  <script src="./script.js"></script>
+  </body>
 </html>
