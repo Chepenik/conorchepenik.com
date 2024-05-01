@@ -5,7 +5,449 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Conor Chepenik</title>
-    <link rel="stylesheet" href="style.css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+p {
+  color: rgb(85, 85, 85);
+}
+
+a,
+.btn {
+  transition: all 300ms ease;
+}
+
+nav,
+.nav-links {
+  display: flex;
+}
+
+nav {
+  justify-content: space-around;
+  align-items: center;
+  height: 17vh;
+}
+
+.nav-links {
+  gap: 2rem;
+  list-style: none;
+  font-size: 1.5rem;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+  text-decoration-color: white;
+}
+
+a:hover {
+  color: grey;
+  text-decoration: underline;
+  text-underline-offset: 1rem;
+  text-decoration-color: rgb(181, 181, 181);
+}
+
+.logo {
+  font-size: 2rem;
+}
+
+.logo:hover {
+  cursor: default;
+}
+
+#hamburger-nav {
+  display: none;
+}
+
+.hamburger-menu {
+  position: relative;
+  display: inline-block;
+}
+
+.hamburger-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 24px;
+  width: 30px;
+  cursor: pointer;
+}
+
+.hamburger-icon span {
+  width: 100%;
+  height: 2px;
+  background-color: black;
+  transition: all 0.3 ease-in-out;
+}
+
+.menu-links {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: white;
+  width: fit-content;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3 ease-in-out;
+}
+
+.menu-links a {
+  display: block;
+  padding: 10px;
+  text-align: center;
+  font-size: 1.5rem;
+  color: black;
+  text-decoration: none;
+  transition: all 0.3 ease-in-out;
+}
+
+.menu-links li {
+  list-style: none;
+}
+
+.menu-links.open {
+  max-height: 300px;
+}
+
+.hamburger-icon.open span:first-child {
+  transform: rotate(45deg) translate(10px, 5px);
+}
+
+.hamburger-icon.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-icon.open span:last-child {
+  transform: rotate(-45deg) translate(10px, -5px);
+}
+
+.hamburger-icon span:first-child {
+  transform: none;
+}
+
+.hamburger-icon span:first-child {
+  opacity: 1;
+}
+
+.hamburger-icon span:first-child {
+  transform: none;
+}
+
+section {
+  padding-top: 4vh;
+  height: 96vh;
+  margin: 0 10rem;
+  box-sizing: border-box;
+  min-height: fit-content;
+}
+
+.section-container {
+  display: flex;
+}
+
+#profile {
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
+  height: 80vh;
+}
+
+.section__pic-container {
+  display: flex;
+  height: 400px;
+  width: 400px;
+  margin: auto 0;
+}
+
+.section__text {
+  align-self: center;
+  text-align: center;
+}
+
+.section__text p {
+  font-weight: 600;
+}
+
+.section__text__p1 {
+  text-align: center;
+}
+
+.section__text__p2 {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-size: 3rem;
+  text-align: center;
+}
+
+#socials-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  gap: 1rem;
+}
+
+.icon {
+  cursor: pointer;
+  height: 2rem;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.btn {
+  font-weight: 600;
+  transition: all 300ms ease;
+  padding: 1rem;
+  width: 8rem;
+  border-radius: 2rem;
+}
+
+.btn-color-1,
+.btn-color-2 {
+  border: rgb(53, 53, 53) 0.1rem solid;
+}
+
+.btn-color-1:hover,
+.btn-color-2:hover {
+  cursor: pointer;
+}
+
+.btn-color-1,
+.btn-color-2:hover {
+  background: rgb(53, 53, 53);
+  color: white;
+}
+
+.btn-color-1:hover {
+  background: rgb(0, 0, 0);
+}
+
+.btn-color-2 {
+  background: none;
+}
+
+.btn-color-2:hover {
+  border: rgb(255, 255, 255) 0.1rem solid;
+}
+
+.btn-container {
+  gap: 1rem;
+}
+
+#about {
+  position: relative;
+}
+
+.about-containers {
+  gap: 2rem;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+
+.about-details-container {
+  justify-content: center;
+  flex-direction: column;
+}
+
+.about-containers,
+.about-details-container {
+  display: flex;
+}
+
+.about-pic {
+  border-radius: 2rem;
+}
+
+.arrow {
+  position: absolute;
+  right: -5rem;
+  bottom: 2.5rem;
+}
+
+.details-container {
+  padding: 1.5rem;
+  flex: 1;
+  background: white;
+  border-radius: 2rem;
+  border: rgb(53, 53, 53) 0.1rem solid;
+  border-color: rgb(163, 163, 163);
+  text-align: center;
+}
+
+.section-container {
+  gap: 4rem;
+  height: 80%;
+}
+
+.section__pic-container {
+  height: 400px;
+  width: 400px;
+  margin: auto 0;
+}
+
+#experience {
+  position: relative;
+}
+
+.experience-sub-title {
+  color: rgb(85, 85, 85);
+  font-weight: 600;
+  font-size: 1.75rem;
+  margin-bottom: 2rem;
+}
+
+.experience-details-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.article-container {
+  display: flex;
+  text-align: initial;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 2.5rem;
+  justify-content: space-around;
+}
+
+article {
+  display: flex;
+  width: 10rem;
+  justify-content: space-around;
+  gap: 0.5rem;
+}
+
+article .icon {
+  cursor: default;
+}
+
+#proof-of-work {
+  padding-bottom: 100px;
+}
+
+.color-container {
+  border-color: rgb(163, 163, 163);
+  background: rgb(250, 250, 250);
+}
+
+.Proof-Of-Work-img {
+  border-radius: 2rem;
+  width: 90%;
+  height: 90%;
+}
+
+.Proof-Of-Work-title {
+  margin: 1rem;
+  color: black;
+}
+
+.Proof-Of-Work-btn {
+  color: black;
+  border-color: rgb(163, 163, 163);
+}
+
+#contact {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 70vh;
+}
+
+.contact-info-upper-container {
+  display: flex;
+  justify-content: center;
+  border-radius: 2rem;
+  border: rgb(53, 53, 53) 0.1rem solid;
+  border-color: rgb(163, 163, 163);
+  background: (250, 250, 250);
+  margin: 2rem auto;
+  padding: 0.5rem;
+}
+
+.contact-info-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 1rem;
+}
+
+.contact-info-container p {
+  font-size: larger;
+}
+
+.contact-icon {
+  cursor: default;
+}
+
+.email-icon {
+  height: 2.5rem;
+}
+
+footer {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 0vh;
+  margin: 0 1rem;
+  margin-top: 250px;
+}
+
+footer p {
+  text-align: center;
+}
+
+.profilepic{
+  border-radius: 50%;
+}
+
+.tipheader {
+  text-align: center;
+  margin: 0 100px;
+}
+
+.center-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 20px; 
+}
+
+.qrcode {
+  height: 500px;
+  width: auto;
+  margin-bottom: 50px; /* Adjust the margin as needed */
+}
+
+.lightning-widget {
+  width: 25%; /* You can adjust the width as needed */
+  height: 25vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+    </style>
     <link rel="stylesheet" href="mediaqueries.css" />
   </head>
   <body>
@@ -13,10 +455,9 @@
       <div class="logo">Conor Chepenik</div>
       <div>
         <ul class="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#Proof-Of-Work">Proof-Of-Work</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="https://medium.com/chepenikconor" onclick="toggleMenu()">Writing</a></li>
+          <li><a href="https://github.com/Chepenik" onclick="toggleMenu()">Coding</a></li>
+          <li><a href="primal.net/p/npub16syt2k5uky4pxycfttxrxmwwzht2t3008f2q68kw4almjl4guu9qea8t7y" onclick="toggleMenu()">Shitposting</a></li>
         </ul>
       </div>
     </nav>
@@ -29,10 +470,9 @@
           <span></span>
         </div>
         <div class="menu-links">
-          <li><a href="#about" onclick="toggleMenu()">About</a></li>
-          <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-          <li><a href="#Proof-Of-Work" onclick="toggleMenu()">Proof-Of-Work</a></li>
-          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+          <li><a href="https://medium.com/chepenikconor" onclick="toggleMenu()">Writing</a></li>
+          <li><a href="https://github.com/Chepenik" onclick="toggleMenu()">Coding</a></li>
+          <li><a href="primal.net/p/npub16syt2k5uky4pxycfttxrxmwwzht2t3008f2q68kw4almjl4guu9qea8t7y" onclick="toggleMenu()">Shitposting</a></li>
         </div>
       </div>
     </nav>
@@ -43,16 +483,16 @@
       <div class="section__text">
         <p class="section__text__p1">Hi, I'm</p>
         <h1 class="title">Chep</h1>
-        <p class="section__text__p2">Full Stack Developer, Life Long Learner, & Father</p>
+        <p class="section__text__p2">A Bitcoin Adoption Specialist at Swan</p>
         <div class="btn-container">
           <button
             class="btn btn-color-2"
-            onclick="window.open('./assets/resume-example.pdf')"
+            onclick="window.open('https://www.swanbitcoin.com/conorchepenik/')"
           >
-            Download CV
+            Buy Bitcoin
           </button>
-          <button class="btn btn-color-1" onclick="location.href='./#contact'">
-            Contact Info
+          <button class="btn btn-color-1" onclick="location.href='chepenikconor@gmail.com'">
+            Contact Me
           </button>
         </div>
         <div id="socials-container">
@@ -63,305 +503,15 @@
             onclick="location.href='https://www.linkedin.com/in/conorchepenik/'"
           />
           <img
-            src="./assets/github.png"
-            alt="My Github profile"
+            src="./assets/x.png"
+            alt="My Twitter profile"
             class="icon"
-            onclick="location.href='https://github.com/Chepenik'"
+            onclick="location.href='https://twitter.com/conorchepenik'"
           />
         </div>
       </div>
     </section>
-    <section id="about">
-      <p class="section__text__p1">Get To Know More</p>
-      <h1 class="title">About Me</h1>
-      <div class="section-container">
-        <div class="section__pic-container">
-          <img
-            src="./assets/about-pic.png"
-            alt="Profile picture"
-            class="about-pic"
-          />
-        </div>
-        <div class="about-details-container">
-          <div class="about-containers">
-            <div class="details-container">
-              <img
-                src="./assets/experience.png"
-                alt="Experience icon"
-                class="icon"
-              />
-              <h3>Experience</h3>
-              <p>2.5 years slinging SaaS (software as a service)</p>
-              <p>1.5 years building websites & other software</p>
-              <p>1.5 years writing articles and essays for large audiences</p>
-            </div>
-            <div class="details-container">
-              <img
-                src="./assets/education.png"
-                alt="Education icon"
-                class="icon"
-              />
-              <h3>Education</h3>
-              <p>B.A Film & Media, Entrepreneurship <br />Tufts University</p>
-            </div>
-          </div>
-          <div class="text-container">
-            <p>
-              Sports have been a large part of my life. The teamwork, communication skills, work ethic and freindships that my athletic career brought me are things I will cherish forever. I played football for eleven years, including D3 football at Tufts University. After graduating during a pandemic, I set off on an exciting journey in the tech sales industry. My first gig was with a company called Reveneer, where I specialized in handling outbound sales for various organizations. Then, I joined the crew at Datadog as an Account Executive, running the whole sales cycle. After almost three years of selling cutting-edge tech and sharpening my business development skills, I decided to pivot into development. So, I completed <a href="https://launchacademy.com/" target="_blank">Launch Academy</a> and have been diving into code ever since.
 
-              Outside the 9-to-5 hustle, I have many interests. I'm really into writing about Bitcoin, enjoy hosting podcasts, and find my zen when I'm out running. I also get a kick out of building web apps, getting lost in great books, and having deep philosophical chats with people who can expand my worldview."
-            
-              </p>
-          </div>
-        </div>
-      </div>
-      <img
-        src="./assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#experience'"
-      />
-    </section>
-    <section id="experience">
-      <p class="section__text__p1">Explore My</p>
-      <h1 class="title">Experience</h1>
-      <div class="experience-details-container">
-        <div class="about-containers">
-          <div class="details-container">
-            <h2 class="experience-sub-title">Frontend Development</h2>
-            <div class="article-container">
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>HTML</h3>
-                  <p>Experienced</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>CSS</h3>
-                  <p>Experienced</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Tailwind</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>JavaScript</h3>
-                  <p>Experienced</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>TypeScript</h3>
-                  <p>Experienced</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>React</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-            </div>
-          </div>
-          <div class="details-container">
-            <h2 class="experience-sub-title">Backend Development</h2>
-            <div class="article-container">
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>PostgreSQL</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Node JS</h3>
-                  <p>Experienced</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Express JS</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Next.js</h3>
-                  <p>Experienced</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Java</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Git</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-            </div>
-          </div>
-        </div>
-      </div>
-      <img
-        src="./assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#Proof-Of-Work'"
-      />
-    </section>
-    <section id="Proof-Of-Work">
-      <p class="section__text__p1">Browse My Recent</p>
-      <h1 class="title">Proof-Of-Work</h1>
-      <div class="experience-details-container">
-        <div class="about-containers">
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="./assets/project-1.png"
-                alt="Project 1"
-                class="Proof-Of-Work-img"
-              />
-            </div>
-            <h2 class="experience-sub-title Proof-Of-Work-title">MassAdoption.net</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 Proof-Of-Work-btn"
-                onclick="location.href='https://github.com/Chepenik/MassAdoption.ai'"
-              >
-                Github
-              </button>
-              <button
-                class="btn btn-color-2 Proof-Of-Work-btn"
-                onclick="location.href='https://www.massadoption.net/'"
-              >
-                Website
-              </button>
-            </div>
-          </div>
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="./assets/project-2.png"
-                alt="Project 2"
-                class="Proof-Of-Work-img"
-              />
-            </div>
-            <h2 class="experience-sub-title Proof-Of-Work-title">My Writing</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 Proof-Of-Work-btn"
-                onclick="location.href='https://chepenik.github.io/conorchepenik.com/writing.html'"
-              >
-                Published Work
-              </button>
-              <button
-                class="btn btn-color-2 Proof-Of-Work-btn"
-                onclick="location.href='https://chepenikconor.medium.com/'"
-              >
-                Medium
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <img
-        src="./assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#contact'"
-      />
-    </section>
-    <section id="contact">
-      <h1 class="title">Contact Me</h1>
-      <p class="section__text__p1">DMs are open</p>
-      <div class="contact-info-upper-container">
-        <div class="contact-info-container">
-          <img
-            src="./assets/linkedin.png"
-            alt="LinkedIn icon"
-            class="icon contact-icon"
-          />
-          <p><a href="https://www.linkedin.com/in/conorchepenik/">LinkedIn</a></p>
-        </div>
-        <div class="contact-info-container">
-          <img
-            src="./assets/twitter.png"
-            alt="LinkedIn icon"
-            class="icon contact-icon"
-          />
-          <p><a href="https://twitter.com/ConorChepenik">Twitter</a></p>
-        </div>
-      </div>
-    </section>
     <h3 class="tipheader">If you got value out of my work consider donating some satoshis with lightning or on-chain to keep me motivated to write, create content, and show others the power of a value 4 value enabled internet</h3>
     <p class="tipheader">To donate on chain use: bc1qv3qwhejtk84yjft2r8nu634p4hkkv6n8gfh09ga5d0phenj607wsufdqgd or use QR code</p>
     <div class="center-container">
@@ -384,15 +534,9 @@
   <footer>
     <nav>
       <div class="nav-links-container">
-        <ul class="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#Proof-Of-Work">Proof-Of-Work</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
       </div>
     </nav>
-    <p>Copyright &#169; 2023 Conor Chepenik. All Rights Reserved.</p>
+    <p>Copyright &#169; 2024 Conor Chepenik. All Rights Reserved.</p>
   </footer>
   <script src="./script.js"></script>
   </body>
