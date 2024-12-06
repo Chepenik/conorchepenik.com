@@ -16,6 +16,10 @@
 
       body {
         font-family: "Poppins", sans-serif;
+        /* Miami pastel gradient background */
+        background: linear-gradient(to bottom right, #ffa321, #af5eee);
+        color: #70abe7;
+        overflow-x: hidden;
       }
 
       html {
@@ -23,12 +27,23 @@
       }
 
       p {
-        color: rgb(85, 85, 85);
+        color: #2c3e50;
+        line-height: 1.6;
       }
 
       a,
       .btn {
         transition: all 300ms ease;
+        color: #2c3e50;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      a:hover {
+        color: #34495e;
+        text-decoration: underline;
       }
 
       nav,
@@ -37,482 +52,391 @@
       }
 
       nav {
-        justify-content: space-around;
+        justify-content: space-between;
         align-items: center;
-        height: 17vh;
+        padding: 1rem 2rem;
+        background: rgba(255, 255, 255, 0.6);
+        backdrop-filter: blur(5px);
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
       }
 
       .nav-links {
         gap: 2rem;
         list-style: none;
-        font-size: 1.5rem;
-      }
-
-      a {
-        color: black;
-        text-decoration: none;
-        text-decoration-color: white;
-      }
-
-      a:hover {
-        color: grey;
-        text-decoration: underline;
-        text-underline-offset: 1rem;
-        text-decoration-color: rgb(181, 181, 181);
+        font-size: 1.1rem;
       }
 
       .logo {
         font-size: 2rem;
-      }
-
-      .logo:hover {
+        font-weight: 700;
         cursor: default;
+        color: #2c3e50;
       }
-      
+
+      .nav-links li a:hover {
+        text-decoration: underline;
+      }
+
+      /* Hamburger Menu */
       #hamburger-nav {
-    display: none;
-    align-items: center;
-    justify-content: space-between; /* Ensures logo and menu are on opposite sides */
-    width: 100%; /* Full width of the navigation bar */
-}
+        display: none;
+        align-items: center;
+        width: 100%;
+      }
 
-.hamburger-menu {
-    display: inline-block;
-    position: relative;
-}
+      .hamburger-menu {
+        display: inline-block;
+        position: relative;
+      }
 
-.hamburger-icon {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 24px;
-    width: 30px;
-    cursor: pointer;
-}
-
-.hamburger-icon span {
-    width: 100%;
-    height: 2px;
-    background-color: black;
-    transition: all 0.3s ease-in-out;
-}
-
-.menu-links {
-    position: absolute;
-    top: 100%;
-    right: 0; /* Aligns the dropdown menu to the right of the hamburger icon */
-    background-color: white;
-    width: fit-content;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease-in-out;
-}
-
-.menu-links li {
-    list-style: none;
-}
-
-.menu-links.open {
-    max-height: 300px;
-}
-
-.hamburger-icon.open span:first-child {
-    transform: rotate(45deg) translate(10px, 5px);
-}
-
-.hamburger-icon.open span:nth-child(2) {
-    opacity: 0;
-}
-
-.hamburger-icon.open span:last-child {
-    transform: rotate(-45deg) translate(10px, -5px);
-}
-
-@media (max-width: 768px) {
-    #hamburger-nav {
+      .hamburger-icon {
         display: flex;
-    }
-}
+        flex-direction: column;
+        justify-content: space-between;
+        height: 24px;
+        width: 30px;
+        cursor: pointer;
+      }
 
+      .hamburger-icon span {
+        width: 100%;
+        height: 2px;
+        background-color: #2c3e50;
+        transition: all 0.3s ease-in-out;
+      }
+
+      .menu-links {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: #fff;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        width: fit-content;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-in-out;
+        border-radius: 0.5rem;
+        padding: 0;
+      }
+
+      .menu-links li {
+        list-style: none;
+        margin: 0;
+      }
+
+      .menu-links li a {
+        display: block;
+        padding: 0.5rem 1rem;
+        color: #2c3e50;
+      }
+
+      .menu-links li a:hover {
+        background: #f0f0f0;
+      }
+
+      .menu-links.open {
+        max-height: 300px;
+      }
+
+      .hamburger-icon.open span:first-child {
+        transform: rotate(45deg) translate(10px, 5px);
+      }
+
+      .hamburger-icon.open span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .hamburger-icon.open span:last-child {
+        transform: rotate(-45deg) translate(10px, -5px);
+      }
+
+      @media (max-width: 768px) {
+        #desktop-nav {
+          display: none;
+        }
+
+        #hamburger-nav {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 1rem;
+          background: rgba(255,255,255,0.6);
+          backdrop-filter: blur(5px);
+          position: sticky;
+          top: 0;
+          z-index: 10;
+        }
+      }
 
       section {
-        padding-top: 4vh;
-        margin: 0 10rem;
-        box-sizing: border-box;
-        min-height: fit-content;
+        padding: 6vh 10rem;
       }
 
-      .section-container {
-        display: flex;
+      @media (max-width: 1200px) {
+        section {
+          margin: 0 2rem;
+          padding: 4vh 0;
+        }
       }
 
       #profile {
         display: flex;
         justify-content: center;
         gap: 5rem;
-        height: 80vh;
+        align-items: center;
+        min-height: 70vh;
+      }
+
+      @media (max-width: 768px) {
+        #profile {
+          flex-direction: column;
+          gap: 2rem;
+        }
       }
 
       .section__pic-container img {
-          width: 100%;
-          height: auto;
+        width: 300px;
+        height: auto;
+        border-radius: 50%;
+        box-shadow: 0 0 20px rgba(0,0,0,0.1);
       }
 
       .section__text {
-        align-self: center;
         text-align: center;
+        max-width: 500px;
       }
 
       .section__text p {
-        font-weight: 600;
+        font-weight: 500;
+        color: #2c3e50;
       }
 
       .section__text__p1 {
-        text-align: center;
-      }
-
-      .section__text__p2 {
-        font-size: 1.75rem;
-        margin-bottom: 1rem;
+        font-size: 1.4rem;
+        margin-bottom: 0.5rem;
       }
 
       .title {
-        font-size: 3rem;
-        text-align: center;
+        font-size: 3.5rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        color: #2c3e50;
+      }
+
+      .section__text__p2 {
+        font-size: 1.6rem;
+        margin-bottom: 2rem;
+        color: #2c3e50;
       }
 
       #socials-container {
         display: flex;
         justify-content: center;
-        margin-top: 1rem;
-        gap: 1rem;
+        margin-top: 2rem;
+        gap: 1.5rem;
       }
 
       .icon {
         cursor: pointer;
         height: 2rem;
+        filter: grayscale(50%);
+        transition: filter 0.3s ease, transform 0.3s ease;
+      }
+
+      .icon:hover {
+        filter: grayscale(0%);
+        transform: scale(1.1);
       }
 
       .btn-container {
         display: flex;
         justify-content: center;
         gap: 1rem;
+        margin-top: 1.5rem;
       }
 
       .btn {
         font-weight: 600;
-        transition: all 300ms ease;
-        padding: 1rem;
-        width: 8rem;
+        padding: 1rem 2rem;
         border-radius: 2rem;
+        border: none;
+        font-size: 1rem;
+        cursor: pointer;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
       }
 
       .btn-color-1,
       .btn-color-2 {
-        border: rgb(53, 53, 53) 0.1rem solid;
+        border: 1px solid #2c3e50;
       }
 
-      .btn-color-1:hover,
-      .btn-color-2:hover {
-        cursor: pointer;
-      }
-
-      .btn-color-1,
-      .btn-color-2:hover {
-        background: rgb(53, 53, 53);
-        color: white;
+      .btn-color-1 {
+        background: #2c3e50;
+        color: #fff;
       }
 
       .btn-color-1:hover {
-        background: rgb(0, 0, 0);
+        background: #1f2e3a;
       }
 
       .btn-color-2 {
-        background: none;
+        background: #fff;
+        color: #2c3e50;
       }
 
       .btn-color-2:hover {
-        border: rgb(255, 255, 255) 0.1rem solid;
+        background: #2c3e50;
+        color: #fff;
       }
 
-      .btn-container {
-        gap: 1rem;
-      }
-
-      #about {
-        position: relative;
-      }
-
-      .about-containers {
-        gap: 2rem;
-        margin-bottom: 2rem;
-        margin-top: 2rem;
-      }
-
-      .about-details-container {
-        justify-content: center;
-        flex-direction: column;
-      }
-
-      .about-containers,
-      .about-details-container {
-        display: flex;
-      }
-
-      .about-pic {
-        border-radius: 2rem;
-      }
-
-      .arrow {
-        position: absolute;
-        right: -5rem;
-        bottom: 2.5rem;
-      }
-
-      .details-container {
-        padding: 1.5rem;
-        flex: 1;
-        background: white;
-        border-radius: 2rem;
-        border: rgb(53, 53, 53) 0.1rem solid;
-        border-color: rgb(163, 163, 163);
+      /* Quote Section with Horizontal Scroll */
+      .quotes-section {
+        margin: 4rem 0;
         text-align: center;
       }
 
-      .section-container {
-        gap: 4rem;
-        height: 80%;
-      }
-
-      .section__pic-container {
-        height: 400px;
-        width: 400px;
-        margin: auto 0;
-      }
-
-      #experience {
-        position: relative;
-      }
-
-      .experience-sub-title {
-        color: rgb(85, 85, 85);
-        font-weight: 600;
-        font-size: 1.75rem;
+      .quotes-section h2 {
         margin-bottom: 2rem;
+        font-weight: 700;
+        font-size: 2.5rem;
+        color: #2c3e50;
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
       }
 
-      .experience-details-container {
+      .quotes-wrapper {
         display: flex;
-        justify-content: center;
-        flex-direction: column;
+        overflow-x: auto;
+        gap: 1rem;
+        scroll-behavior: smooth;
+        padding: 1rem;
       }
 
-      .article-container {
-  display: flex;
-  text-align: initial;
-  flex-wrap: wrap;
-  flex-direction: row;
-  gap: 2.5rem;
-  justify-content: space-around;
-}
+      .quotes-wrapper::-webkit-scrollbar {
+        height: 8px;
+      }
 
-article {
-  display: flex;
-  width: 10rem;
-  justify-content: space-around;
-  gap: 0.5rem;
-}
+      .quotes-wrapper::-webkit-scrollbar-track {
+        background: #f0f0f0;
+        border-radius: 4px;
+      }
 
-article .icon {
-  cursor: default;
-}
+      .quotes-wrapper::-webkit-scrollbar-thumb {
+        background: #ccc;
+        border-radius: 4px;
+      }
 
-#proof-of-work {
-  padding-bottom: 100px;
-}
+      .quote-card {
+        flex: 0 0 250px;
+        background: #ffffffcc;
+        border-radius: 1rem;
+        padding: 1.5rem;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
 
-.color-container {
-  border-color: rgb(163, 163, 163);
-  background: rgb(250, 250, 250);
-}
+      .quote-card p {
+        font-style: italic;
+        font-size: 1.1rem;
+        line-height: 1.5;
+        color: #2c3e50;
+      }
 
-.Proof-Of-Work-img {
-  border-radius: 2rem;
-  width: 90%;
-  height: 90%;
-}
+      .quote-author {
+        margin-top: 1rem;
+        text-align: right;
+        font-style: normal;
+        color: #555;
+        font-weight: 500;
+      }
 
-.Proof-Of-Work-title {
-  margin: 1rem;
-  color: black;
-}
+      .quote-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      }
 
-.Proof-Of-Work-btn {
-  color: black;
-  border-color: rgb(163, 163, 163);
-}
+      /* Tip section */
+      .tipheader {
+        text-align: center;
+        margin: 4rem 2rem 1rem;
+        font-size: 1.3rem;
+        color: #2c3e50;
+        font-weight: 500;
+      }
 
-#contact {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  height: 70vh;
-}
+      .center-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 20px;
+      }
 
-.contact-info-upper-container {
-  display: flex;
-  justify-content: center;
-  border-radius: 2rem;
-  border: rgb(53, 53, 53) 0.1rem solid;
-  border-color: rgb(163, 163, 163);
-  background: (250, 250, 250);
-  margin: 2rem auto;
-  padding: 0.5rem;
-}
+      .qrcode {
+        height: 250px;
+        width: auto;
+        margin-bottom: 20px;
+        border: 2px solid #ccc;
+        border-radius: 0.5rem;
+        transition: box-shadow 0.3s ease;
+      }
 
-.contact-info-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  margin: 1rem;
-}
+      .qrcode:hover {
+        box-shadow: 0 0 15px rgba(0,0,0,0.3);
+      }
 
-.contact-info-container p {
-  font-size: larger;
-}
+      /* Footer */
+      footer {
+        text-align: center;
+        padding: 2rem;
+        margin-top: 4rem;
+        color: #2c3e50;
+        font-size: 0.9rem;
+      }
 
-.contact-icon {
-  cursor: default;
-}
+      footer p {
+        opacity: 0.8;
+      }
 
-.email-icon {
-  height: 2.5rem;
-}
+      /* Responsive styles */
+      @media (max-width: 768px) {
+        section {
+          margin: 0 1rem;
+          padding: 2rem 0;
+        }
 
-footer {
-  position: relative;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 0vh;
-  margin: 0 1rem;
-  margin-top: 250px;
-}
+        .title {
+          font-size: 2.5rem;
+        }
 
-footer p {
-  text-align: center;
-}
+        .btn {
+          font-size: 0.9rem;
+        }
 
-.profilepic {
-  border-radius: 50%;
-}
-
-.tipheader {
-  text-align: center;
-  margin: 0 100px;
-}
-
-.center-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.qrcode {
-  height: 500px;
-  width: auto;
-  margin-bottom: 50px; /* Adjust the margin as needed */
-}
-
-.lightning-widget {
-  width: 25%; /* You can adjust the width as needed */
-  height: 25vh;
-  padding: 20px;
-  box-sizing: border-box;
-}
-
-blockquote.quotes {
-  font-style: italic;
-  font-size: 1.2rem;
-  line-height: 1.5;
-  margin: 2rem auto;
-  padding: 1rem;
-  border-left: 4px solid #333;
-  background-color: #f8f8f8;
-  max-width: 800px;
-}
-
-blockquote.quotes p {
-  margin-bottom: 1rem;
-  color: #555;
-  text-align: justify;
-}
-
-blockquote.quotes p:last-child {
-  margin-bottom: 0;
-}
-
-/* Responsive Styles */
-@media (max-width: 768px) {
-  nav {
-    height: auto;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 1rem;
-  }
-
-  .nav-links {
-    flex-direction: column;
-    align-items: flex-start;
-    margin-top: 1rem;
-  }
-
-  #desktop-nav {
-    display: none;
-  }
-
-  #hamburger-nav {
-    display: block;
-  }
-
-  section {
-    margin: 0 2rem;
-  }
-
-  #profile {
-    flex-direction: column;
-    height: auto;
-    gap: 2rem;
-    padding: 2rem 0;
-  }
-
-  .section__pic-container {
-    height: 300px;
-    width: 300px;
-  }
-
-  blockquote.quotes {
-    max-width: 100%;
-    padding: 0.5rem;
-  }
-}
+        .quote-card {
+          flex: 0 0 80%;
+          margin-right: 1rem;
+        }
+      }
     </style>
-    <link rel="stylesheet" href="mediaqueries.css" />
   </head>
   <body>
+    <!-- Desktop Navigation -->
     <nav id="desktop-nav">
       <div class="logo">Conor Chepenik</div>
-      <div>
-        <ul class="nav-links">
-          <li><a href="https://medium.com/@chepenikconor" onclick="toggleMenu()">Writing</a></li>
-          <li><a href="https://github.com/Chepenik" onclick="toggleMenu()">Coding</a></li>
-          <li><a href="https://primal.net/p/npub16syt2k5uky4pxycfttxrxmwwzht2t3008f2q68kw4almjl4guu9qea8t7y" target="_blank" onclick="toggleMenu()">Shitposting</a></li>
-        </ul>
-      </div>
+      <ul class="nav-links">
+        <li><a href="https://medium.com/@chepenikconor">Writing</a></li>
+        <li><a href="https://github.com/Chepenik">Coding</a></li>
+        <li><a href="https://primal.net/p/npub16syt2k5uky4pxycfttxrxmwwzht2t3008f2q68kw4almjl4guu9qea8t7y" target="_blank">Shitposting</a></li>
+      </ul>
     </nav>
+
+    <!-- Mobile Navigation -->
     <nav id="hamburger-nav">
       <div class="logo">Conor Chepenik</div>
       <div class="hamburger-menu">
@@ -522,15 +446,16 @@ blockquote.quotes p:last-child {
           <span></span>
         </div>
         <div class="menu-links">
-          <li><a href="https://medium.com/chepenikconor" onclick="toggleMenu()">Writing</a></li>
+          <li><a href="https://medium.com/@chepenikconor" onclick="toggleMenu()">Writing</a></li>
           <li><a href="https://github.com/Chepenik" onclick="toggleMenu()">Coding</a></li>
-          <li><a href="primal.net/p/npub16syt2k5uky4pxycfttxrxmwwzht2t3008f2q68kw4almjl4guu9qea8t7y" onclick="toggleMenu()">Shitposting</a></li>
+          <li><a href="https://primal.net/p/npub16syt2k5uky4pxycfttxrxmwwzht2t3008f2q68kw4almjl4guu9qea8t7y" onclick="toggleMenu()">Shitposting</a></li>
         </div>
       </div>
     </nav>
+
     <section id="profile">
       <div class="section__pic-container">
-        <img class="profilepic" src="./assets/profile-pic.png" alt="John Doe profile picture" />
+        <img class="profilepic" src="./assets/profile-pic.png" alt="Profile Picture" />
       </div>
       <div class="section__text">
         <p class="section__text__p1">Hi, I'm</p>
@@ -550,13 +475,13 @@ blockquote.quotes p:last-child {
         <div id="socials-container">
           <img
             src="./assets/linkedin.png"
-            alt="My LinkedIn profile"
+            alt="LinkedIn profile"
             class="icon"
             onclick="location.href='https://www.linkedin.com/in/conorchepenik/'"
           />
           <img
             src="./assets/x.png"
-            alt="My Twitter profile"
+            alt="Twitter profile"
             class="icon"
             onclick="location.href='https://twitter.com/conorchepenik'"
           />
@@ -564,37 +489,86 @@ blockquote.quotes p:last-child {
       </div>
     </section>
 
-    <blockquote class="quotes">
-      <p>"A building has integrity just like a man. And just as seldom." - Roark</p>
-      <p>"There is nothing noble in being superior to your fellow man; true nobility is being superior to your former self." - Hemingway</p>
-    </blockquote>
+    <!-- Quotes Section with Horizontal Scroll -->
+    <div class="quotes-section">
+      <h2>Words of Inspiration</h2>
+      <div class="quotes-wrapper">
+        <div class="quote-card">
+          <p>"A building has integrity just like a man. And just as seldom."</p>
+          <div class="quote-author">- Roark (Ayn Rand)</div>
+        </div>
+        <div class="quote-card">
+          <p>"The question isn’t who is going to let me; it’s who is going to stop me."</p>
+          <div class="quote-author">- Ayn Rand</div>
+        </div>
+        <div class="quote-card">
+          <p>"You have power over your mind—not outside events. Realize this, and you will find strength."</p>
+          <div class="quote-author">- Marcus Aurelius</div>
+        </div>
+        <div class="quote-card">
+          <p>"We suffer more in imagination than in reality."</p>
+          <div class="quote-author">- Seneca</div>
+        </div>
+        <div class="quote-card">
+          <p>"It’s not what happens to you, but how you react to it that matters."</p>
+          <div class="quote-author">- Epictetus</div>
+        </div>
+        <div class="quote-card">
+          <p>"The only true wisdom is in knowing you know nothing."</p>
+          <div class="quote-author">- Socrates</div>
+        </div>
+        <div class="quote-card">
+          <p>"The measure of a man is what he does with power."</p>
+          <div class="quote-author">- Plato</div>
+        </div>
+        <div class="quote-card">
+          <p>"It is the mark of an educated mind to be able to entertain a thought without accepting it."</p>
+          <div class="quote-author">- Aristotle</div>
+        </div>
+        <div class="quote-card">
+          <p>"Not what we have but what we enjoy constitutes our abundance."</p>
+          <div class="quote-author">- Epicurus</div>
+        </div>
+        <div class="quote-card">
+          <p>"The obstacle is the way."</p>
+          <div class="quote-author">- Ryan Holiday</div>
+        </div>
+      </div>
+    </div>
 
-    <h3 class="tipheader">If you got value out of my work consider donating some satoshis with lightning or on-chain to keep me motivated to write, create content, and show others the power of a value 4 value enabled internet</h3>
-    <p class="tipheader">To donate on chain use: bc1qv3qwhejtk84yjft2r8nu634p4hkkv6n8gfh09ga5d0phenj607wsufdqgd or use QR code</p>
+    <h3 class="tipheader">
+      If you got value out of my work consider donating some satoshis with lightning or on-chain to keep me motivated.
+    </h3>
+    <p class="tipheader">
+      To donate on chain use: bc1qv3qwhejtk84yjft2r8nu634p4hkkv6n8gfh09ga5d0phenj607wsufdqgd or scan the QR code below:
+    </p>
+
     <div class="center-container">
-      <img class="qrcode" src="./assets/onchainwalletqrcode.jpeg" alt="">
+      <img class="qrcode" src="./assets/onchainwalletqrcode.jpeg" alt="On-chain Wallet QR code">
     </div>
     <div class="center-container">
       <lightning-widget 
-      name="Conor Chepenik" 
-      accent="#7e9ca9" 
-      to="chep@getalby.com" 
-      image="https://i.nostr.build/mYa7.png" 
-      amounts="2100, 21000, 210000"
-      class="lightning-widget"
-    />
+        name="Conor Chepenik"
+        accent="#7e9ca9"
+        to="chep@getalby.com"
+        image="https://i.nostr.build/mYa7.png"
+        amounts="2100, 21000, 210000"
+        class="lightning-widget"
+      ></lightning-widget>
     </div>
 
+    <footer>
+      <p>&#169; 2024 Conor Chepenik. All Rights Reserved Is What You Are Supposed To Put Right Here But I'm Just a Chill Guy Who Likes Open-source tech.</p>
+    </footer>
 
-  <script src="https://embed.twentyuno.net/js/app.js"></script>
-
-  <footer>
-    <nav>
-      <div class="nav-links-container">
-      </div>
-    </nav>
-    <p>Copyright &#169; 2024 Conor Chepenik. All Rights Reserved.</p>
-  </footer>
-  <script src="./script.js"></script>
+    <script>
+      function toggleMenu() {
+        const menu = document.querySelector(".menu-links");
+        const icon = document.querySelector(".hamburger-icon");
+        menu.classList.toggle("open");
+        icon.classList.toggle("open");
+      }
+    </script>
+    <script src="https://embed.twentyuno.net/js/app.js"></script>
   </body>
 </html>
