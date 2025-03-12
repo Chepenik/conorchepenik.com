@@ -296,6 +296,7 @@
       .quotes-section {
         margin: 4rem 0;
         text-align: center;
+        padding: 0 1rem;
       }
 
       .quotes-section h2 {
@@ -309,55 +310,142 @@
       .quotes-wrapper {
         display: flex;
         overflow-x: auto;
-        gap: 1rem;
+        gap: 1.5rem;
         scroll-behavior: smooth;
-        padding: 1rem;
+        padding: 1.5rem 1rem;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
       }
 
       .quotes-wrapper::-webkit-scrollbar {
-        height: 8px;
+        height: 10px;
       }
 
       .quotes-wrapper::-webkit-scrollbar-track {
-        background: #f0f0f0;
-        border-radius: 4px;
+        background: rgba(240, 240, 240, 0.8);
+        border-radius: 10px;
       }
 
       .quotes-wrapper::-webkit-scrollbar-thumb {
-        background: #ccc;
-        border-radius: 4px;
+        background: #2c3e50;
+        border-radius: 10px;
+        border: 2px solid rgba(240, 240, 240, 0.8);
+      }
+
+      .quotes-wrapper::-webkit-scrollbar-thumb:hover {
+        background: #1f2e3a;
       }
 
       .quote-card {
-        flex: 0 0 250px;
-        background: #ffffffcc;
+        flex: 0 0 300px;
+        background: rgba(255, 255, 255, 0.85);
         border-radius: 1rem;
-        padding: 1.5rem;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        padding: 2rem;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         transition: transform 0.3s ease, box-shadow 0.3s ease;
+        scroll-snap-align: center;
+        min-height: 200px;
       }
 
       .quote-card p {
         font-style: italic;
         font-size: 1.1rem;
-        line-height: 1.5;
+        line-height: 1.6;
         color: #2c3e50;
+        margin-bottom: 1rem;
       }
 
       .quote-author {
-        margin-top: 1rem;
+        margin-top: auto;
         text-align: right;
         font-style: normal;
         color: #555;
-        font-weight: 500;
+        font-weight: 600;
       }
 
       .quote-card:hover {
-        transform: translateY(-3px);
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      }
+
+      /* Add scroll buttons for better navigation */
+      .quotes-container {
+        position: relative;
+        max-width: 90%;
+        margin: 0 auto;
+      }
+
+      .scroll-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(255, 255, 255, 0.8);
+        border: none;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        z-index: 2;
+        transition: all 0.3s ease;
+      }
+
+      .scroll-btn:hover {
+        background: #fff;
         box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      }
+
+      .scroll-left {
+        left: -20px;
+      }
+
+      .scroll-right {
+        right: -20px;
+      }
+
+      .scroll-btn svg {
+        width: 20px;
+        height: 20px;
+        fill: #2c3e50;
+      }
+
+      @media (max-width: 768px) {
+        section {
+          margin: 0 1rem;
+          padding: 2rem 0;
+        }
+
+        .title {
+          font-size: 2.5rem;
+        }
+
+        .btn {
+          font-size: 0.9rem;
+        }
+
+        .quote-card {
+          flex: 0 0 85%;
+          padding: 1.5rem;
+        }
+        
+        .scroll-btn {
+          width: 35px;
+          height: 35px;
+        }
+        
+        .scroll-left {
+          left: -10px;
+        }
+        
+        .scroll-right {
+          right: -10px;
+        }
       }
 
       /* Tip section */
@@ -401,27 +489,6 @@
 
       footer p {
         opacity: 0.8;
-      }
-
-      /* Responsive styles */
-      @media (max-width: 768px) {
-        section {
-          margin: 0 1rem;
-          padding: 2rem 0;
-        }
-
-        .title {
-          font-size: 2.5rem;
-        }
-
-        .btn {
-          font-size: 0.9rem;
-        }
-
-        .quote-card {
-          flex: 0 0 80%;
-          margin-right: 1rem;
-        }
       }
     </style>
   </head>
@@ -492,47 +559,59 @@
     <!-- Quotes Section with Horizontal Scroll -->
     <div class="quotes-section">
       <h2>Words of Inspiration</h2>
-      <div class="quotes-wrapper">
-        <div class="quote-card">
-          <p>"A building has integrity just like a man. And just as seldom."</p>
-          <div class="quote-author">- Roark (Ayn Rand)</div>
+      <div class="quotes-container">
+        <button class="scroll-btn scroll-left" id="scroll-left">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+          </svg>
+        </button>
+        <div class="quotes-wrapper" id="quotes-wrapper">
+          <div class="quote-card">
+            <p>"A building has integrity just like a man. And just as seldom."</p>
+            <div class="quote-author">- Roark (Ayn Rand)</div>
+          </div>
+          <div class="quote-card">
+            <p>"The question isn't who is going to let me; it's who is going to stop me."</p>
+            <div class="quote-author">- Ayn Rand</div>
+          </div>
+          <div class="quote-card">
+            <p>"You have power over your mind—not outside events. Realize this, and you will find strength."</p>
+            <div class="quote-author">- Marcus Aurelius</div>
+          </div>
+          <div class="quote-card">
+            <p>"We suffer more in imagination than in reality."</p>
+            <div class="quote-author">- Seneca</div>
+          </div>
+          <div class="quote-card">
+            <p>"It's not what happens to you, but how you react to it that matters."</p>
+            <div class="quote-author">- Epictetus</div>
+          </div>
+          <div class="quote-card">
+            <p>"The only true wisdom is in knowing you know nothing."</p>
+            <div class="quote-author">- Socrates</div>
+          </div>
+          <div class="quote-card">
+            <p>"The measure of a man is what he does with power."</p>
+            <div class="quote-author">- Plato</div>
+          </div>
+          <div class="quote-card">
+            <p>"It is the mark of an educated mind to be able to entertain a thought without accepting it."</p>
+            <div class="quote-author">- Aristotle</div>
+          </div>
+          <div class="quote-card">
+            <p>"Not what we have but what we enjoy constitutes our abundance."</p>
+            <div class="quote-author">- Epicurus</div>
+          </div>
+          <div class="quote-card">
+            <p>"The obstacle is the way."</p>
+            <div class="quote-author">- Ryan Holiday</div>
+          </div>
         </div>
-        <div class="quote-card">
-          <p>"The question isn’t who is going to let me; it’s who is going to stop me."</p>
-          <div class="quote-author">- Ayn Rand</div>
-        </div>
-        <div class="quote-card">
-          <p>"You have power over your mind—not outside events. Realize this, and you will find strength."</p>
-          <div class="quote-author">- Marcus Aurelius</div>
-        </div>
-        <div class="quote-card">
-          <p>"We suffer more in imagination than in reality."</p>
-          <div class="quote-author">- Seneca</div>
-        </div>
-        <div class="quote-card">
-          <p>"It’s not what happens to you, but how you react to it that matters."</p>
-          <div class="quote-author">- Epictetus</div>
-        </div>
-        <div class="quote-card">
-          <p>"The only true wisdom is in knowing you know nothing."</p>
-          <div class="quote-author">- Socrates</div>
-        </div>
-        <div class="quote-card">
-          <p>"The measure of a man is what he does with power."</p>
-          <div class="quote-author">- Plato</div>
-        </div>
-        <div class="quote-card">
-          <p>"It is the mark of an educated mind to be able to entertain a thought without accepting it."</p>
-          <div class="quote-author">- Aristotle</div>
-        </div>
-        <div class="quote-card">
-          <p>"Not what we have but what we enjoy constitutes our abundance."</p>
-          <div class="quote-author">- Epicurus</div>
-        </div>
-        <div class="quote-card">
-          <p>"The obstacle is the way."</p>
-          <div class="quote-author">- Ryan Holiday</div>
-        </div>
+        <button class="scroll-btn scroll-right" id="scroll-right">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+          </svg>
+        </button>
       </div>
     </div>
 
@@ -558,7 +637,7 @@
     </div>
 
     <footer>
-      <p>&#169; 2024 Conor Chepenik. All Rights Reserved Is What You Are Supposed To Put Right Here But I'm Just a Chill Guy Who Likes Open-source tech.</p>
+      <p>&#169; <span id="current-year"></span> Conor Chepenik. All Rights Reserved Is What You Are Supposed To Put Right Here But I'm Just a Chill Guy Who Likes Open-source tech.</p>
     </footer>
 
     <script>
@@ -568,6 +647,34 @@
         menu.classList.toggle("open");
         icon.classList.toggle("open");
       }
+      
+      // Set current year in footer
+      document.getElementById("current-year").textContent = new Date().getFullYear();
+      
+      // Quotes scrolling functionality
+      document.addEventListener('DOMContentLoaded', function() {
+        const scrollLeftBtn = document.getElementById('scroll-left');
+        const scrollRightBtn = document.getElementById('scroll-right');
+        const quotesWrapper = document.getElementById('quotes-wrapper');
+        
+        if (scrollLeftBtn && scrollRightBtn && quotesWrapper) {
+          const scrollAmount = 350; // Adjust scroll amount as needed
+          
+          scrollLeftBtn.addEventListener('click', function() {
+            quotesWrapper.scrollBy({
+              left: -scrollAmount,
+              behavior: 'smooth'
+            });
+          });
+          
+          scrollRightBtn.addEventListener('click', function() {
+            quotesWrapper.scrollBy({
+              left: scrollAmount,
+              behavior: 'smooth'
+            });
+          });
+        }
+      });
     </script>
     <script src="https://embed.twentyuno.net/js/app.js"></script>
   </body>
